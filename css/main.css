@@ -35,7 +35,7 @@
 h1{
     font-size: 50px;
     background-color: red;
-    box-shadow: 3px 3px 7px
+    /*box-shadow: 3px 3px 7px*/
 }
 
 body {
