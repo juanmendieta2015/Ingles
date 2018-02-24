@@ -1,0 +1,43 @@
+.resultado {
+    font-size: 50px;
+    color: gray;
+    margin: 10px 500px;
+    background-color: #f5ffb3;
+    padding: 10px;
+    border-radius: 5px;
+    border:1px solid #ccc;
+    /*box-shadow: 0px 0px 7px ;*/
+       
+}
+
+.botonGenerar{
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.contador{
+    font-size: 25px;
+    color: gray;
+    margin: 20px;
+}
+
+.botonResetear{
+    font-size: 25px;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+
+}
+
+h1{
+    font-size: 50px;
+    background-color: red;
+    box-shadow: 3px 3px 7px
+}
+
+body {
+    text-align: center;
+}
