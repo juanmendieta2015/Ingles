@@ -12,8 +12,9 @@
     <h1>Pronombres Reflexivos</h1>
     <div id="contador" class="contador">0</div>
     <div id="resultado" class= "resultado">Haga clic en "Generar"</div>
-    <button id="generar" class="botonGenerar">Generar</button>
+    <button id="generarPregunta" class="botonGenerar">Generar</button>
     <button id="resetear" class="botonResetear">Resetear</button>
+
 
     <script src="js/main.js"></script>
 </body>
