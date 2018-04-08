@@ -10,21 +10,21 @@
 
 .contador{
     font-size: 25px;
-    color: #D0EFB1;
+    color: #9068be;
     /* margin: 0px; */
     background-color: #74D4A0;
-}
+} 
 
 .resultado {
     font-size: 50px;
     color: gray;
-    /*margin: 10px 500px;*/
+    /* margin: 10px; */
     background-color: #f5ffb3;
-    /*padding: 10px;*/
+    padding: 30px;
     border-radius: 5px;
     border:1px solid #ccc;
     /*box-shadow: 0px 0px 7px ;*/
-    height: 100px;
+    /* height: 100px; */
        
 }
 
@@ -42,7 +42,7 @@
     margin: 5px;    
 }
 
-h1 {
+h1, h3 {
     margin: 0px;
 }
 
@@ -51,21 +51,28 @@ body{
 }
 
 #notification{
-    background-color: red;
+    background-color: #FF8E72;
+    /* border-radius: 10px; */
     font-size: 22px;
     /* height: 50px; */
-    width: 33%;
-    margin-left: 33%;
-    display: none;
+    /* width: 33%; */
+    /* margin-left: 30%; */
+    /* margin-right: 30%; */
+    display: block;
+    color:#000000;
 }
 
 #answer{
     display: none; 
-    background-color:#2CC1F1;  
-    font-size: 40px; 
-    width: 50%;
-    margin-left: 25%; 
-    margin-top: 30px;   
+    background-color:#EBE6E0;  
+    font-size: 35px; 
+    padding: 20px;
+    color: #224477;
+    /* margin: 20px 200px; */
+    /* border-radius: 10px; */
+    /* width: 100%; */
+    /* margin-left: 25%;  */
+    /* margin-top: 30px;    */
 }
 
 #help{
@@ -74,5 +81,46 @@ body{
     margin-left: 35%;    
     margin-right: 35%;
     /* background-color:#2CC1F1;      */
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+#topic{
+    /* width: 100%; */
+    background-color: #c5d5cb;
+    padding: 20px;
+    /* padding: 20px 20px 20px 20px; */
+    font-size: 30px;
+}
+
+.progress_bar_container {
+    background-color: #D4AFB9;
+    width: 100%;
+    /* color: #F7F5F6; */
+    /* font-size: 20px; */
+}
+
+/* .progress_bar {
+    background-color: red;
+    color: #F7F5F6;
+    font-size: 20px;
+    width: 100%;
+} */
+
+#percent {
+    height: 24px;
+    /* width: 20%; */
+    background-color: #0B7A75;
+    color: #F7F5F6;
+    font-size: 20px;    
+}
+
+/* #topic{
+    font-size: 30px;
+    color: darkred;
+} */
+
+#topic_title{
+    /* float: right; */
+    font-size: 30px;
+    color:#E04E39;
 }

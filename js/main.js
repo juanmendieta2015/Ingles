@@ -5,10 +5,17 @@ const btnGenerarPregunta = document.getElementById("generarPregunta");
 const notification = document.getElementById("notification");
 const body = document.getElementById("body");
 const answer = document.getElementById("answer");
+const percent = document.getElementById("percent");
+const topic_title = document.getElementById("topic_title");
 
 var count = 0;
+var new_percent = 0;
+
+
 
 // Base de Datos de preguntas
+
+
 preguntas_anything = [
     ["¿Quieres algo?", "Do you want anything?"],
     ["¿Vas a decirme algo?", "Are you going to tell me anything?"],
@@ -24,7 +31,36 @@ preguntas_anything = [
     ["¿Harás algo este fin de semana?", "Are you doing anything this weekend?"]
 ];
 
-preguntas = preguntas_anything;
+preguntas_presente_coninuo = [
+    ["¿Qué estas haciendo?", "What are you doing?"],
+    ["¿Dónde irás esta noche?", "What are you going tonight?"],
+    ["¿Qué harás el viernes en la noche?", "What are you doing on Friday night?"],
+    ["¿Qué harás en navidad?", "What are you doing for Christmans?"],
+    ["¿Que harás en Halloween?", "What are you doing for Halloween?"],
+    ["No haré nada especial", "I'm not doing anything special"],
+    ["¿Qué harás mañana por la noche?", "What are you doing tomorrow night?"],
+    ["¿Qué harás en verano?", "What are you doing for summer?"],
+    ["¿Qué harás esta noche?", "What are you doing tonight?"],
+];
+
+
+
+
+// Switcheo de banco de preguntas (temas)
+
+
+// Class "Anything"
+// preguntas = preguntas_anything;
+// topic_title.innerHTML = "Anything";
+
+// Class "Presente Continuo"
+preguntas = preguntas_presente_coninuo;
+topic_title.innerHTML = "Presente Contínuo";
+
+
+
+
+
 
 /**
 * Almacena los indices que van quedando "disponibles"  del array preguntas[], 
@@ -37,14 +73,7 @@ resetearPreguntas();
 console.log(preguntas);
 
 resetear.addEventListener('click', function(){
-    count = 0;
-    console.log(count);
-    contador.innerHTML = 0;
-    resultado.innerHTML = "Haga clic en \"Generar\"";
-    resultado.style.color = "gray";
-    notification.style.display = "none";
     resetearPreguntas();
-
 })
 
 
@@ -66,6 +95,10 @@ body.addEventListener('keydown', function(){
     if (x == 13) {  // 13 is the intro key
         generarPreguntas();
     }     
+
+    if (x == 96) {  // 96 is the 0 key
+        resetearPreguntas();
+    }  
     
 })
 
@@ -99,7 +132,7 @@ function eliminarElemento(item){
  * Resetea el array disponibles[]
  */
 
-function resetearPreguntas(){
+function resetearPreguntasDisponibles(){
     disponibles = [];
     preguntas.forEach(function(element, index){
         disponibles[index] = index;
@@ -114,18 +147,30 @@ function generarPreguntas(){
     if(disponibles.length>0){
         let item = generarAleatorio();
         let itemPreguntas = disponibles[item];
+        
         console.log(preguntas[itemPreguntas][0]);
  
+        // Muestra la pregunta
         resultado.innerHTML = preguntas[itemPreguntas][0];
         resultado.style.color = "black";  
 
         // Prepara la respuesta para que el usuario la muestre/oculte
         answer.innerHTML = preguntas[itemPreguntas][1];
-        answer.style.display = "none";
+        
+        // Mantiene/Anula la configuracion de usuario mostrar/ocultar respuesta
+        //answer.style.display = "none";
 
         // contador
         count += 1;
-        contador.innerHTML =  count + "/" + preguntas.length + " preguntas";  
+        
+
+        // Actualiza el porcentaje
+        new_percent = Math.round( (count / preguntas.length) * 100 );
+
+        percent.style.width = new_percent + "%";
+        percent.innerHTML = new_percent + "%";
+
+        // contador.innerHTML = new_percent + "% (" + count + " preguntas de " + preguntas.length + ")"; 
  
         eliminarElemento(item);
 
@@ -133,4 +178,23 @@ function generarPreguntas(){
         console.warn("no existen más preguntas");
         notification.style.display = "block";
     }
+}
+
+/**
+ * Reinicia la generacion de las preguntas 
+ */
+
+function resetearPreguntas(){
+    count = 0;
+    console.log(count);
+    // contador.innerHTML = 0;
+    resultado.innerHTML = "Haga clic en \"Generar\"";
+    resultado.style.color = "gray";
+    notification.style.display = "none";
+    resetearPreguntasDisponibles();
+    percent.style.width = "0%";
+    percent.innerHTML = "0%";
+    // percent.style.color = "#0B7A75";
+    answer.innerHTML = "No hay datos para mostrar";
+    answer.style.color = "grey";
 }
