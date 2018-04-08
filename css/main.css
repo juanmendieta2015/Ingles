@@ -1,3 +1,20 @@
+#main {
+    text-align: center;
+}
+
+ #header {
+    background-color: #4A4063;
+    color: #4D7298;
+    
+} 
+
+.contador{
+    font-size: 25px;
+    color: #D0EFB1;
+    /* margin: 0px; */
+    background-color: #74D4A0;
+}
+
 .resultado {
     font-size: 50px;
     color: gray;
@@ -7,37 +24,55 @@
     border-radius: 5px;
     border:1px solid #ccc;
     /*box-shadow: 0px 0px 7px ;*/
+    height: 100px;
        
 }
 
-.botonGenerar{
-    background-color: green;
-    color: white;
-    font-size: 25px;
-    padding: 10px;
-    margin: 20px;
-}
-
-.contador{
-    font-size: 25px;
-    color: gray;
-    margin: 20px;
-}
-
-.botonResetear{
-    font-size: 25px;
-    background-color: gray;
-    color: white;
+ /* #footer {
+    background-color: #BFACC8;
     padding: 10px;
 
+}  */
+
+.buttoms {
+    background-color: #4A4063;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;    
 }
 
-h1{
-    font-size: 50px;
+h1 {
+    margin: 0px;
+}
+
+body{
+    margin: 0px;
+}
+
+#notification{
     background-color: red;
-    /*box-shadow: 3px 3px 7px*/
+    font-size: 22px;
+    /* height: 50px; */
+    width: 33%;
+    margin-left: 33%;
+    display: none;
 }
 
-body {
-    text-align: center;
+#answer{
+    display: none; 
+    background-color:#2CC1F1;  
+    font-size: 40px; 
+    width: 50%;
+    margin-left: 25%; 
+    margin-top: 30px;   
+}
+
+#help{
+    text-align: left;
+    /* width: 25%; */
+    margin-left: 35%;    
+    margin-right: 35%;
+    /* background-color:#2CC1F1;      */
+    margin-top: 50px;
 }
