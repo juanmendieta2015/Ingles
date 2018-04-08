@@ -13,12 +13,18 @@
         <div id="header">
             <h1>Prácticas de Inglés: Traducciones Inversas</h1>
         </div>
-        <div id= "topic">
+
+        <div class= "topic">
             Tema:
-            <span id="topic_title"></span>
+            <span>
+                <select id="topic_id" class="topic topic_dropdown">
+                    <option value="anything">Anything</option>
+                    <option value="presente_continuo">Presente Continuo</option>
+                </select>            
+            </span>
+            <!-- <span id="topic_title"></span> -->
         </div>
         
-        <!-- <div id="contador" class="contador"></div> -->
         <div class="progress_bar_container">
             <div id="percent">0%</div>
         </div>
