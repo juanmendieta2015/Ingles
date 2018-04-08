@@ -7,13 +7,14 @@ const body = document.getElementById("body");
 const answer = document.getElementById("answer");
 const percent = document.getElementById("percent");
 const topic_title = document.getElementById("topic_title");
+const cbmTopicId = document.getElementById("topic_id");
 
 var count = 0;
 var new_percent = 0;
 
 
 
-// Base de Datos de preguntas
+// Banco de preguntas por Temas
 
 
 preguntas_anything = [
@@ -46,16 +47,15 @@ preguntas_presente_coninuo = [
 
 
 
-// Switcheo de banco de preguntas (temas)
+// Asignacion de Tema por Default
 
 
-// Class "Anything"
-// preguntas = preguntas_anything;
-// topic_title.innerHTML = "Anything";
+// Tema: "Anything"
+preguntas = preguntas_anything;
 
-// Class "Presente Continuo"
-preguntas = preguntas_presente_coninuo;
-topic_title.innerHTML = "Presente Contínuo";
+// Tema: "Presente Continuo"
+// preguntas = preguntas_presente_coninuo;
+
 
 
 
@@ -82,6 +82,10 @@ btnGenerarPregunta.addEventListener('click', function(){
 })
 
 
+/** 
+* Captura eventos keydown
+*/
+
 body.addEventListener('keydown', function(){
     var x = event.keyCode;
     if (x == 97) {  // 97 is the 1 key
@@ -101,6 +105,33 @@ body.addEventListener('keydown', function(){
     }  
     
 })
+
+
+
+/** 
+* Dropdown de temas
+*/
+
+cbmTopicId.addEventListener('change', function(){
+    console.log(cbmTopicId.value);
+
+    switch (cbmTopicId.value) {
+
+        case 'anything':
+            preguntas = preguntas_anything;
+            // topic_title.innerHTML = "Anything";
+            break;
+
+        case 'presente_continuo':
+            preguntas = preguntas_presente_coninuo;
+            // topic_title.innerHTML = "Presente Contínuo";
+    }    
+
+    disponibles=[];
+    resetearPreguntas();    
+
+})
+
 
 
 /** 

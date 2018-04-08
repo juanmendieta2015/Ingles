@@ -11,28 +11,17 @@
 .contador{
     font-size: 25px;
     color: #9068be;
-    /* margin: 0px; */
     background-color: #74D4A0;
 } 
 
 .resultado {
     font-size: 50px;
     color: gray;
-    /* margin: 10px; */
     background-color: #f5ffb3;
     padding: 30px;
     border-radius: 5px;
     border:1px solid #ccc;
-    /*box-shadow: 0px 0px 7px ;*/
-    /* height: 100px; */
-       
 }
-
- /* #footer {
-    background-color: #BFACC8;
-    padding: 10px;
-
-}  */
 
 .buttoms {
     background-color: #4A4063;
@@ -52,12 +41,7 @@ body{
 
 #notification{
     background-color: #FF8E72;
-    /* border-radius: 10px; */
     font-size: 22px;
-    /* height: 50px; */
-    /* width: 33%; */
-    /* margin-left: 30%; */
-    /* margin-right: 30%; */
     display: block;
     color:#000000;
 }
@@ -68,59 +52,40 @@ body{
     font-size: 35px; 
     padding: 20px;
     color: #224477;
-    /* margin: 20px 200px; */
-    /* border-radius: 10px; */
-    /* width: 100%; */
-    /* margin-left: 25%;  */
-    /* margin-top: 30px;    */
 }
 
 #help{
     text-align: left;
-    /* width: 25%; */
     margin-left: 35%;    
     margin-right: 35%;
-    /* background-color:#2CC1F1;      */
     margin-top: 30px;
 }
 
-#topic{
-    /* width: 100%; */
+.topic{
     background-color: #c5d5cb;
     padding: 20px;
-    /* padding: 20px 20px 20px 20px; */
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .progress_bar_container {
     background-color: #D4AFB9;
     width: 100%;
-    /* color: #F7F5F6; */
-    /* font-size: 20px; */
 }
-
-/* .progress_bar {
-    background-color: red;
-    color: #F7F5F6;
-    font-size: 20px;
-    width: 100%;
-} */
 
 #percent {
     height: 24px;
-    /* width: 20%; */
     background-color: #0B7A75;
     color: #F7F5F6;
     font-size: 20px;    
 }
 
-/* #topic{
-    font-size: 30px;
-    color: darkred;
+/* #topic_title{
+    color:#E04E39;
 } */
 
-#topic_title{
-    /* float: right; */
-    font-size: 30px;
-    color:#E04E39;
+.topic_dropdown{
+    background-color: #C0C5C1;
+    font-size: 15px;
+    padding: 5px;
+    color: #4A4063;
 }
