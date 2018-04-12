@@ -189,7 +189,7 @@ function generarPreguntas(){
         answer.innerHTML = preguntas[itemPreguntas][1];
         
         // Mantiene/Anula la configuracion de usuario mostrar/ocultar respuesta
-        //answer.style.display = "none";
+        answer.style.display = "none";
 
         // contador
         count += 1;
