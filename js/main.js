@@ -171,6 +171,7 @@ function generarPreguntas(){
         // Mantiene/Anula la configuracion de usuario mostrar/ocultar respuesta
         answer.style.display = "none";
 
+
         // contador
         count += 1;
         
