@@ -11,7 +11,16 @@ const cbmTopicId = document.getElementById("topic_id");
 
 var count = 0;
 var new_percent = 0;
+var btnDismissHTML =    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                            '<span aria-hidden="true">&times;</span>' +
+                        '</button>';
 
+// Oculta la respuesta
+answer.style.display = "none";              
+
+// Almacena los indices de las preguntas que van quedando disponibles
+// para su seleccion aleatoria
+disponibles=[];
 
 
 // Banco de preguntas por Temas
@@ -44,56 +53,38 @@ preguntas_presente_coninuo = [
     ["¿Qué harás esta noche?", "What are you doing tonight?"],
 ];
 
+// Banco de preguntas por default
+preguntas = preguntas_anything;            
 
-
-
-// Asignacion de Tema por Default
-
-
-// Tema: "Anything"
-preguntas = preguntas_anything;
-
-// Tema: "Presente Continuo"
-// preguntas = preguntas_presente_coninuo;
-
-
-
-
-
-
-
-/**
-* Almacena los indices que van quedando "disponibles"  del array preguntas[], 
-* esto es para evitar seleccionar dos veces una misma pregunta, se usa de modo 
-* "auxiliar", ya que se aplica una funcion sobre al array disponibles[] para escoger 
-* de manera aleatoria un elemento (el cual contienen los indices de preguntas[] es decir de 0 a N)
-*/
-disponibles=[];
 resetearPreguntas();
-console.log(preguntas);
+
+
+// Boton Resetear 
 
 resetear.addEventListener('click', function(){
     resetearPreguntas();
 })
 
 
+// Boton Generar
+
 btnGenerarPregunta.addEventListener('click', function(){
     generarPreguntas();
 })
 
 
-/** 
-* Captura eventos keydown
-*/
+// Captura eventos keydown
 
 body.addEventListener('keydown', function(){
     var x = event.keyCode;
     if (x == 97) {  // 97 is the 1 key
+
         if (answer.style.display === "none") {
             answer.style.display = "block";
         } else{
             answer.style.display = "none";
         }
+
     }    
 
     if (x == 13) {  // 13 is the intro key
@@ -107,13 +98,9 @@ body.addEventListener('keydown', function(){
 })
 
 
-
-/** 
-* Dropdown de temas
-*/
+// Dropdown de temas
 
 cbmTopicId.addEventListener('change', function(){
-    console.log(cbmTopicId.value);
 
     switch (cbmTopicId.value) {
 
@@ -134,24 +121,18 @@ cbmTopicId.addEventListener('change', function(){
 
 
 
-/** 
-* Selecciona aleatoriamente un elemento del array disponibles[]
-*/
+// Selecciona aleatoriamente un elemento del array disponibles[]
 
 function generarAleatorio(){
-    //console.log("generarAleatorio()...");
     var item = Math.floor(Math.random() * disponibles.length);
     return item;
 }
 
 
 
-/**
- * Borra un elemento en el array disponibles[], cuyo elemento
- * ya haya sido utilizado al mostrar la pregunta.
- * Esto para evitar repetir una pregunta al seleccionarla aleatoriamente 
- * mas adelante
- */
+// Elimina del array disponible[] la pregunta generada actualmente
+// para que no se vuelva ha repetir de la seleccion
+
 function eliminarElemento(item){
     if (item > -1) {
         disponibles.splice(item, 1);
@@ -159,9 +140,8 @@ function eliminarElemento(item){
 }
 
 
-/**
- * Resetea el array disponibles[]
- */
+
+// Resetea el array disponibles[]
 
 function resetearPreguntasDisponibles(){
     disponibles = [];
@@ -170,24 +150,24 @@ function resetearPreguntasDisponibles(){
     });
 }
 
-/**
- * funcion principal, Genera las preguntas 
- */
 
-function generarPreguntas(){
+
+// Genera preguntas 
+
+function generarPreguntas(){    
     if(disponibles.length>0){
         let item = generarAleatorio();
         let itemPreguntas = disponibles[item];
         
-        console.log(preguntas[itemPreguntas][0]);
- 
         // Muestra la pregunta
         resultado.innerHTML = preguntas[itemPreguntas][0];
         resultado.style.color = "black";  
 
-        // Prepara la respuesta para que el usuario la muestre/oculte
-        answer.innerHTML = preguntas[itemPreguntas][1];
         
+        // Prepara la respuesta para que el usuario la muestre/oculte
+        answer.innerHTML = btnDismissHTML + "<h2>" + preguntas[itemPreguntas][1] + "</h2>";
+        
+
         // Mantiene/Anula la configuracion de usuario mostrar/ocultar respuesta
         answer.style.display = "none";
 
@@ -201,31 +181,26 @@ function generarPreguntas(){
         percent.style.width = new_percent + "%";
         percent.innerHTML = new_percent + "%";
 
-        // contador.innerHTML = new_percent + "% (" + count + " preguntas de " + preguntas.length + ")"; 
- 
         eliminarElemento(item);
 
     } else{
-        console.warn("no existen más preguntas");
+        console.warn("No existen más preguntas");
         notification.style.display = "block";
     }
 }
 
-/**
- * Reinicia la generacion de las preguntas 
- */
 
+
+// Reinicia la generacion de las preguntas 
+ 
 function resetearPreguntas(){
     count = 0;
-    console.log(count);
-    // contador.innerHTML = 0;
     resultado.innerHTML = "Haga clic en \"Generar\"";
     resultado.style.color = "gray";
     notification.style.display = "none";
     resetearPreguntasDisponibles();
     percent.style.width = "0%";
     percent.innerHTML = "0%";
-    // percent.style.color = "#0B7A75";
-    answer.innerHTML = "No hay datos para mostrar";
+    answer.innerHTML =  btnDismissHTML + "<h4>No hay datos para mostrar</h4>";
     answer.style.color = "grey";
 }

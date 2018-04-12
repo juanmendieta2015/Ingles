@@ -1,11 +1,10 @@
-#main {
+.main {
     text-align: center;
 }
 
  #header {
     background-color: #4A4063;
-    color: #4D7298;
-    
+    color: #4D7298;    
 } 
 
 .contador{
@@ -24,41 +23,16 @@
 }
 
 .buttoms {
-    background-color: #4A4063;
-    color: white;
     font-size: 20px;
-    padding: 10px;
     margin: 5px;    
 }
 
-h1, h3 {
-    margin: 0px;
-}
-
-body{
-    margin: 0px;
-}
-
-#notification{
-    background-color: #FF8E72;
-    font-size: 22px;
-    display: block;
-    color:#000000;
-}
-
 #answer{
-    display: none; 
-    background-color:#EBE6E0;  
     font-size: 35px; 
-    padding: 20px;
-    color: #224477;
 }
 
 #help{
     text-align: left;
-    margin-left: 35%;    
-    margin-right: 35%;
-    margin-top: 30px;
 }
 
 .topic{
@@ -70,6 +44,7 @@ body{
 .progress_bar_container {
     background-color: #D4AFB9;
     width: 100%;
+    padding: 0px;
 }
 
 #percent {
@@ -77,11 +52,8 @@ body{
     background-color: #0B7A75;
     color: #F7F5F6;
     font-size: 20px;    
-}
 
-/* #topic_title{
-    color:#E04E39;
-} */
+}
 
 .topic_dropdown{
     background-color: #C0C5C1;
@@ -89,3 +61,4 @@ body{
     padding: 5px;
     color: #4A4063;
 }
+
