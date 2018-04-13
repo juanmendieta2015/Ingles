@@ -26,16 +26,19 @@
 
         <!-- Tema -->
 
-        <div class="row">
-            <div class="col-xs-12 topic" >
-               Tema:
-                <span>
-                    <select id="topic_id" class="topic topic_dropdown">
-                        <option value="anything">Anything</option>
-                        <option value="presente_continuo">Presente Continuo</option>
-                    </select>            
-                </span>
+        <div class="row topic">
+
+            <div class="col-sm-2 col-sm-offset-2" >
+               <label>Tema:</label>
             </div>
+
+            <div class="col-sm-6">
+                <select id="topic_id" class="form-control topic_dropdown">
+                    <option value="anything">Anything</option>
+                    <option value="presente_continuo">Presente Continuo</option>
+                </select>            
+            </div>
+
         </div>
 
 
