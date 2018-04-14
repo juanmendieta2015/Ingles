@@ -1,0 +1,30 @@
+{
+
+    "preguntas_anything" : [
+        { "question" :"¿Quieres algo?",                     "answer" : "Do you want anything?"                          },
+        { "question" :"¿Vas a decirme algo?",               "answer" : "Are you going to tell me anything?"             },
+        { "question" :"¿Quieren algo?",                     "answer" : "Do they want anything?"                         },
+        { "question" :"¿Él quiere algo de la tienda?",      "answer" : "Does he want anything from the shop?"           },
+        { "question" :"¿Hay algo en la mesa?",              "answer" : "Is there anything on the table?"                },
+        { "question" :"¿Harás algo esta noche?",            "answer" : "Are you doing anything tonight?"                },
+        { "question" :"¿Hay algo en el piso?",              "answer" : "Is there anything on the floor?"                },
+        { "question" :"¿Tienes algo en tu bolsillo?",       "answer" : "Do you have anything in your pocket?"           },
+        { "question" :"¿Hay algo en tu vaso?",              "answer" : "Is there anything in your glass?"               },
+        { "question" :"¿Necesitan algo del supermercado?",  "answer" : "Do they need anything from the supermarket?"    },
+        { "question" :"¿Tienes algo en tu cartera?",        "answer" : "Do you have anything in your wallet?"           }, 
+        { "question" :"¿Harás algo este fin de semana?",    "answer" : "Are you doing anything this weekend?"           }
+    ],
+
+    "presente_continuo" : [
+        { "question" :"¿Qué estas haciendo?",                       "answer" : "What are you doing?"                    },
+        { "question" :"¿Dónde irás esta noche?",                    "answer" : "What are you going tonight?"            },
+        { "question" :"¿Qué harás el viernes en la noche?",         "answer" : "What are you doing on Friday night?"    },
+        { "question" :"¿Qué harás en navidad?",                     "answer" : "What are you doing for Christmans?"     },
+        { "question" :"¿Que harás en Halloween?",                   "answer" : "What are you doing for Halloween?"      },
+        { "question" :"No haré nada especial",                      "answer" : "I'm not doing anything special"         },
+        { "question" :"¿Qué harás mañana por la noche?",            "answer" : "What are you doing tomorrow night?"     },
+        { "question" :"¿Qué harás en verano?",                      "answer" : "What are you doing for summer?"         },
+        { "question" :"¿Qué harás esta noche?",                     "answer" : "What are you doing tonight?"            }
+    ]
+
+}
