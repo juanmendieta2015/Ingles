@@ -98,6 +98,23 @@ cbmTopicId.addEventListener('change', function(){
         case 'presente_continuo':
             preguntas = preguntasJSON.presente_continuo;
             break;
+
+        case 'class_121_verbos_terminan_ch':
+            preguntas = preguntasJSON.class_121_verbos_terminan_ch;
+            break;
+
+        case 'translation_list_38':
+            preguntas = preguntasJSON.translation_list_38;
+            break;
+
+        case 'class_120_to_take_off_and_to_put_on':
+            preguntas = preguntasJSON.class_120_to_take_off_and_to_put_on;
+            break;
+
+        case 'class_119_to_take_out_and_to_put_into':
+            preguntas = preguntasJSON.class_119_to_take_out_and_to_put_into;
+            break;
+
     }    
 
     disponibles=[];

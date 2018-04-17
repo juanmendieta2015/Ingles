@@ -1,30 +1,604 @@
 {
 
     "preguntas_anything" : [
-        { "question" :"¿Quieres algo?",                     "answer" : "Do you want anything?"                          },
-        { "question" :"¿Vas a decirme algo?",               "answer" : "Are you going to tell me anything?"             },
-        { "question" :"¿Quieren algo?",                     "answer" : "Do they want anything?"                         },
-        { "question" :"¿Él quiere algo de la tienda?",      "answer" : "Does he want anything from the shop?"           },
-        { "question" :"¿Hay algo en la mesa?",              "answer" : "Is there anything on the table?"                },
-        { "question" :"¿Harás algo esta noche?",            "answer" : "Are you doing anything tonight?"                },
-        { "question" :"¿Hay algo en el piso?",              "answer" : "Is there anything on the floor?"                },
-        { "question" :"¿Tienes algo en tu bolsillo?",       "answer" : "Do you have anything in your pocket?"           },
-        { "question" :"¿Hay algo en tu vaso?",              "answer" : "Is there anything in your glass?"               },
-        { "question" :"¿Necesitan algo del supermercado?",  "answer" : "Do they need anything from the supermarket?"    },
-        { "question" :"¿Tienes algo en tu cartera?",        "answer" : "Do you have anything in your wallet?"           }, 
-        { "question" :"¿Harás algo este fin de semana?",    "answer" : "Are you doing anything this weekend?"           }
+        {
+            "question"  : "¿Quieres algo?",                             
+            "answer"    : "Do you want anything?"                          
+        },
+        {
+            "question"  : "¿Vas a decirme algo?",                       
+            "answer"    : "Are you going to tell me anything?"             
+        },
+        {
+            "question"  : "¿Quieren algo?",                             
+            "answer"    : "Do they want anything?"                         
+        },
+        {
+            "question"  : "¿Él quiere algo de la tienda?",              
+            "answer"    : "Does he want anything from the shop?"           
+        },
+        {
+            "question"  : "¿Hay algo en la mesa?",                      
+            "answer"    : "Is there anything on the table?"                
+        },
+        {
+            "question"  : "¿Harás algo esta noche?",                    
+            "answer"    : "Are you doing anything tonight?"                
+        },
+        {
+            "question"  : "¿Hay algo en el piso?",                      
+            "answer"    : "Is there anything on the floor?"                
+        },
+        {
+            "question"  : "¿Tienes algo en tu bolsillo?",               
+            "answer"    : "Do you have anything in your pocket?"           
+        },
+        {
+            "question"  : "¿Hay algo en tu vaso?",                      
+            "answer"    : "Is there anything in your glass?"               
+        },
+        {
+            "question"  : "¿Necesitan algo del supermercado?",          
+            "answer"    : "Do they need anything from the supermarket?"    
+        },
+        {
+            "question"  : "¿Tienes algo en tu cartera?",                
+            "answer"    : "Do you have anything in your wallet?"           
+        }, 
+        {
+            "question"  : "¿Harás algo este fin de semana?",            
+            "answer"    : "Are you doing anything this weekend?"           
+        }
     ],
 
     "presente_continuo" : [
-        { "question" :"¿Qué estas haciendo?",                       "answer" : "What are you doing?"                    },
-        { "question" :"¿Dónde irás esta noche?",                    "answer" : "What are you going tonight?"            },
-        { "question" :"¿Qué harás el viernes en la noche?",         "answer" : "What are you doing on Friday night?"    },
-        { "question" :"¿Qué harás en navidad?",                     "answer" : "What are you doing for Christmans?"     },
-        { "question" :"¿Que harás en Halloween?",                   "answer" : "What are you doing for Halloween?"      },
-        { "question" :"No haré nada especial",                      "answer" : "I'm not doing anything special"         },
-        { "question" :"¿Qué harás mañana por la noche?",            "answer" : "What are you doing tomorrow night?"     },
-        { "question" :"¿Qué harás en verano?",                      "answer" : "What are you doing for summer?"         },
-        { "question" :"¿Qué harás esta noche?",                     "answer" : "What are you doing tonight?"            }
-    ]
+        {
+            "question"  : "¿Qué estas haciendo?",                       
+            "answer"    : "What are you doing?"                            
+        },
+        {
+            "question"  : "¿Dónde irás esta noche?",                    
+            "answer"    : "What are you going tonight?"                    
+        },
+        {
+            "question"  : "¿Qué harás el viernes en la noche?",         
+            "answer"    : "What are you doing on Friday night?"            
+        },
+        {
+            "question"  : "¿Qué harás en navidad?",                     
+            "answer"    : "What are you doing for Christmans?"             
+        },
+        {
+            "question"  : "¿Que harás en Halloween?",                   
+            "answer"    : "What are you doing for Halloween?"              
+        },
+        {
+            "question"  : "No haré nada especial",                      
+            "answer"    : "I'm not doing anything special"                 
+        },
+        {
+            "question"  : "¿Qué harás mañana por la noche?",            
+            "answer"    : "What are you doing tomorrow night?"             
+        },
+        {
+            "question"  : "¿Qué harás en verano?",                      
+            "answer"    : "What are you doing for summer?"                 
+        },
+        {
+            "question"  : "¿Qué harás esta noche?",                     
+            "answer"    : "What are you doing tonight?"                    
+        }
+    ],
+
+    "class_121_verbos_terminan_ch" : [
+        { 
+            "question"  : "Yo tomo el bus cada dia",                      
+            "answer"    : "I catch a bus every day"                            
+        },
+        { 
+            "question"  :"¿Te resfrias cada año?",                       
+            "answer"    : "Do you catch a cold every year?"                            
+        },
+        { 
+            "question"  : "Si, el se resfria cada año tambien",           
+            "answer"    : " Yes, he catches a cold every year too"                            
+        },
+        { 
+            "question"  : "¿Coges el autobus todos los dias?",           
+            "answer"    : "Do you catch  a bus every day?"                            
+        },
+        { 
+            "question"  : "Si, el coge el bus todos los dias",            
+            "answer"    : "Yes, he catches a bus every day"                            
+        },
+        { 
+            "question"  : "Si, ella coge el bus todos los dias tambien",  
+            "answer"    : "Yes, she catches a bus every day too"                            
+        },
+        { 
+            "question"  : "Yo cogo el bus cerca de mi casa",                         
+            "answer"    : "I catch the bus near my house"                            
+        },
+        { 
+            "question"  : "Ella coge el bus cerca de su casa",                         
+            "answer"    : "She catches the bus near her house"                            
+        },
+        { 
+            "question"  : "Me resfrio en verano",                         
+            "answer"    : "I catch cold in the summer"                            
+        },
+        { 
+            "question"  : "Ella se resfria en invierno",                         
+            "answer"    : "She catches could in the winter"                            
+        },
+        { 
+            "question"  : "Yo miro TV en la mañana",                         
+            "answer"    : "I watch TV in the morning"                            
+        },
+        { 
+            "question"  : "Ella mira TV en la noche",                         
+            "answer"    : "She watches TV at night"                            
+        },
+        { 
+            "question"  : "Yo lavo los platos y ella lava la ropa",                         
+            "answer"    : "I wash the dishes and she washes the clouthes"                            
+        },
+        { 
+            "question"  : "¿Coges el Metro todos los dias?",                         
+            "answer"    : "Do you catch the Metro every day"                            
+        },
+        { 
+            "question"  : "Mi amigo coge el Metro todos los dias",                         
+            "answer"    : "My friend catches the Meter every day"                            
+        },
+        { 
+            "question"  : "El siempre coge el Metro todos los dias",                         
+            "answer"    : "He always catches the Metro every day"                            
+        },
+        { 
+            "question"  : "Ella captura criminales todos los dias",                         
+            "answer"    : "She catches criminals every day"                            
+        },
+        { 
+            "question"  : "El siempre captura criminales todos los dias",                         
+            "answer"    : "He always catches crimials every day"                            
+        }
+
+    ],
+
+    "translation_list_38" : [
+        { 
+            "question"  : "Hay un poco de tiempo",                         
+            "answer"    : "There's a little time"                            
+        },
+        { 
+            "question"  : "Hay pocas oportunidades",                         
+            "answer"    : "There are few oportunities"                            
+        },
+        { 
+            "question"  : "Hay unas cuantas oportunidades",                         
+            "answer"    : "There are a few oportunities"                            
+        },
+        { 
+            "question"  : "Hay poca agua en el vaso",                         
+            "answer"    : "There's little water in the glass"                            
+        },
+        { 
+            "question"  : "Hay un poco de agua en el vaso",                         
+            "answer"    : "There's a little water in the glass"                            
+        },
+        { 
+            "question"  : "Estoy seguro de que hay una manera de hacerlo",                         
+            "answer"    : "I'm sure there's a way"                            
+        },
+        { 
+            "question"  : "Hay noticias importantes hoy",                         
+            "answer"    : "There's some important news today"                            
+        },
+        { 
+            "question"  : "Hay gente importante aqui hoy",                         
+            "answer"    : "There are some important people here today"                            
+        },
+        { 
+            "question"  : "Hay muchas chicas guapas en esta clase",                         
+            "answer"    : "There are a lot of pretty girls in this class"                            
+        },
+        { 
+            "question"  : "Hay muchos hombres guapos en esta ciudad",                         
+            "answer"    : "There are a lot of handsome men in this city"                            
+        },
+        { 
+            "question"  : "No hay muchos pajaros en esta zona",                         
+            "answer"    : "There aren't many birds in this area"                            
+        },
+        { 
+            "question"  : "¿Hay mucha gente en tu clase?",                         
+            "answer"    : "Are there many people in your class"                            
+        }
+    ],    
+
+    "class_120_to_take_off_and_to_put_on" : [
+        { 
+            "question"  : "Dime que me quite la corbata",                         
+            "answer"    : "Tell me to take off my tie"                            
+        },
+        { 
+            "question"  : "Quitate la corbata por favor",                         
+            "answer"    : "Take off your tie, please"                            
+        },
+        { 
+            "question"  : "Te estas quitando la corbata",                         
+            "answer"    : "Your taking your tie off"                            
+        },
+        { 
+            "question"  : "Dime que me ponga la corbata",                         
+            "answer"    : "Tell me to put on my tie"                            
+        },
+        { 
+            "question"  : "Ponte tu corbata por favor",                         
+            "answer"    : "Put on your tie, please"                            
+        },
+        { 
+            "question"  : "Me estoy poniendo mi anillo de oro",                         
+            "answer"    : "I'm putting on my gold ring"                            
+        },
+        { 
+            "question"  : "Me lo estoy poniendo lentamente",                         
+            "answer"    : "I'm putting it on slowly"                            
+        },
+        { 
+            "question"  : "Ahora me estoy poniendo mi anillo de plata",                         
+            "answer"    : "Now, I'm putting on my silver ring"                            
+        },
+        { 
+            "question"  : "Me voy a poner mi reloj",                         
+            "answer"    : "I'm going to put on my watch"                            
+        },
+        { 
+            "question"  : "Me lo estoy poniendo",                         
+            "answer"    : "I'm putting it on"                            
+        },
+        { 
+            "question"  : "Voy a quitarmelos",                         
+            "answer"    : "I'm going to take them off"                            
+        },
+        { 
+            "question"  : "Voy a quitarme mi anillo de plata",                         
+            "answer"    : "I'm going to take off my silver ring"                            
+        },
+        { 
+            "question"  : "Me lo estoy quitando",                         
+            "answer"    : "I'm taking it off"                            
+        },
+        { 
+            "question"  : "Voy a quitarme mi reloj",                         
+            "answer"    : "I'm going to take off my watch"                            
+        },
+        { 
+            "question"  : "Estoy quitandome mi reloj",                         
+            "answer"    : "I'm taking off my watch"                            
+        },
+        { 
+            "question"  : "Voy a ponermelos",                         
+            "answer"    : "I'm going to put them on"                            
+        },
+        { 
+            "question"  : "Me los quitaré",                         
+            "answer"    : "I'll take them off"                            
+        },
+        { 
+            "question"  : "Voy a ponermelo",                         
+            "answer"    : "I'm going to put it on"                            
+        },
+        { 
+            "question"  : "Dime que me quite mi reloj",                         
+            "answer"    : "Tell me to take off my watch"                            
+        },
+        { 
+            "question"  : "Quitate tu reloj por favor",                         
+            "answer"    : "Take off your watch, please"                            
+        },
+        { 
+            "question"  : "Te estas quitando tu reloj",                         
+            "answer"    : "You're taking off your watch"                            
+        },
+        { 
+            "question"  : "Dime que me ponga mi reloj",                         
+            "answer"    : "Tell me to put on my watch"                            
+        },
+        { 
+            "question"  : "Ponte tu reloj por favor",                         
+            "answer"    : "Put on your watch, please"                            
+        },
+        { 
+            "question"  : "Te estas poniendo tu reloj",                         
+            "answer"    : "You're putting on your watch"                            
+        },
+        { 
+            "question"  : "Dime que me quite mi anillo",                         
+            "answer"    : "Tell me to take off my ring"                            
+        },
+        { 
+            "question"  : "Te estas quitando tu anillo",                         
+            "answer"    : "You're taking off your ring"                            
+        },
+        { 
+            "question"  : "Dime que me ponga mi anillo",                         
+            "answer"    : "Tell me to put on my ring"                            
+        },
+        { 
+            "question"  : "Ponte tu anillo por favor",                         
+            "answer"    : "Put on your ring, please"                            
+        },
+        { 
+            "question"  : "Te estas poniendo tu anillo",                         
+            "answer"    : "You're putting on your ring"                            
+        }
+
+    ],
+
+    "class_119_to_take_out_and_to_put_into" : [
+        { 
+            "question"  : "Dime que saque mi cartera de mi bolsillo",                         
+            "answer"    : "Tell me to take my wallet out of my pocket"                            
+        },
+        { 
+            "question"  : "Saca tu cartera de tu bolsillo por favor",
+            "answer"    : "Take your wallet out of your pocket, please"
+        },
+        { 
+            "question"  : "Estas sacando tu cartera de tu bolsillo",                         
+            "answer"    : "You're taking your wallet out of your pocket"
+        },
+        { 
+            "question"  : "Dime que saque algo de mi cartera",                         
+            "answer"    : "Tell me to take something out of my wallet"
+        },
+        { 
+            "question"  : "Saca algo de tu cartera",                         
+            "answer"    : "Take something out of your wallet"
+        },
+        { 
+            "question"  : "Dime que la vuelva a meter",                         
+            "answer"    : "Tell me to put it back in"
+        },
+        { 
+            "question"  : "Vuelvelo a meter",                         
+            "answer"    : "Put it back in"
+        },
+        { 
+            "question"  : "Vuelvelo a sacar",                         
+            "answer"    : "Take it back out"
+        },
+        { 
+            "question"  : "Estoy volviendo a sacarlo",                         
+            "answer"    : "I'm taking it back out"
+        },
+        { 
+            "question"  : "Vuelve a meter el billete en tu cartera",                         
+            "answer"    : "Put the bill back in your wallet"
+        },
+        { 
+            "question"  : "Estoy volviendo a meterlo",                         
+            "answer"    : "I'm putting it back in"
+        },
+        { 
+            "question"  : "Saca una tarjeta de credito",                         
+            "answer"    : "Take out a credit car"
+        },
+        { 
+            "question"  : "Vuelve a meter tu cartera en tu bolsillo",                         
+            "answer"    : "Put your wallet back in your pocket"
+        },
+        { 
+            "question"  : "Saca el lapiz rosado",                         
+            "answer"    : "Take out the pink pencil"
+        },
+        { 
+            "question"  : "Estoy sacando el lapiz rosado",                         
+            "answer"    : "I'm taking out pink pencil"
+        },
+        { 
+            "question"  : "Vuelvelos a meter",                         
+            "answer"    : "Put them back in"
+        },
+        { 
+            "question"  : "Estoy sacandolos",                         
+            "answer"    : "I'm taking them out"
+        },
+        { 
+            "question"  : "Estoy metiendolos",                         
+            "answer"    : "I'm putting them in"
+        },
+        { 
+            "question"  : "Estoy metiendolo",                         
+            "answer"    : "I'm putting it in"
+        },
+        { 
+            "question"  : "Estoy sacandolo",                         
+            "answer"    : "I'm taking it out"
+        },
+        { 
+            "question"  : "Estoy metiendo los lapices en el recipiente",                         
+            "answer"    : "I'm putting the pencils into the holder"
+        },
+        { 
+            "question"  : "Dime que la saque de mi bolsillo",                         
+            "answer"    : "Tell me to take it out of my pocket"
+        },
+        { 
+            "question"  : "Estas sacando tu boligrafo de tu bolsillo",                         
+            "answer"    : "You're taking your pen out of your pocket"
+        },
+        { 
+            "question"  : "Estoy sacandolo de mi bolsillo",                         
+            "answer"    : "I'm taking it out of my pocket"
+        },
+        { 
+            "question"  : "Estoy sacando mi telefono de mi bolsillo",                         
+            "answer"    : "I'm taking my phone out of mi pocket"
+        },
+        { 
+            "question"  : "Estoy metiendolo en mi bolsillo",                         
+            "answer"    : "I'm putting it into my pocket"
+        },
+        { 
+            "question"  : "Dime que meta la pelota de golf en la bolsa",                         
+            "answer"    : "Tell me to put the golf ball in the bag"
+        },
+        { 
+            "question"  : "Mete la pelota de golf en la bolsa",                         
+            "answer"    : "Put the golf ball in the bag"
+        },
+        { 
+            "question"  : "Estas metiendo la pelota de golf en la bolsa",                         
+            "answer"    : "You're putting the golf ball into the bag"
+        },
+        { 
+            "question"  : "Dime que meta las cartas en la bolsa",                         
+            "answer"    : "Tell me to put the cards in the bag"
+        },
+        { 
+            "question"  : "Mete las cartas en la bolsa",                         
+            "answer"    : "Put the cards in the bag"
+        },
+        { 
+            "question"  : "Estas metiendo las cartas en la bolsa",                         
+            "answer"    : "You're putting the cards into the bag"
+        },
+        { 
+            "question"  : "Estas sacando las cartas de la bolsa",                         
+            "answer"    : "You're taking the cards out of the bag"
+        },
+        { 
+            "question"  : "Estas volviendo a meter el encendedor en la bolsa",                         
+            "answer"    : "You're putting the lighter back into the bag"
+        },
+        { 
+            "question"  : "Dime que saque el encendedor de la bolsa",                         
+            "answer"    : "Tell me to take the lighter out of the bag"
+        },
+        { 
+            "question"  : "Saca el encendedor de la bolsa",                         
+            "answer"    : "Take the lighter out of the bag"
+        },
+        { 
+            "question"  : "Dime que meta el encendedor en mi bolsillo",                         
+            "answer"    : "Tell me to put the lighter in my pocket"
+        },
+        { 
+            "question"  : "Mete el encendedor en tu bolsillo",                         
+            "answer"    : "Put the lighter in your pocket"
+        },
+        { 
+            "question"  : "Dime que meta el tenedor en la bolsa",                         
+            "answer"    : "Tell me to put the fork in the bag"
+        },
+        { 
+            "question"  : "Mete el tenedor en la bolsa",                         
+            "answer"    : "Put the fork in the bag"
+        },
+        { 
+            "question"  : "Estas metiendo el tenedor en la bolsa",                         
+            "answer"    : "You're putting the fork into the bag"
+        },
+        { 
+            "question"  : "Dime que saque el tenedor de la bolsa",                         
+            "answer"    : "Tell me to take the fork out of the bag"
+        },
+        { 
+            "question"  : "Saca el tenedor de la bolsa",                         
+            "answer"    : "Take the fork out of the bag"
+        },
+        { 
+            "question"  : "Estoy sacando el tenedor de la bolsa",                         
+            "answer"    : "I'm taking the fork out of the bag"
+        },
+        { 
+            "question"  : "Dime que meta el tenedor en mi bolsillo",                         
+            "answer"    : "Tell me to put the fork in my pocket"
+        },
+        { 
+            "question"  : "Mete el tenedor en tu bolsillo",                         
+            "answer"    : "Put the fork in your pocket"
+        },
+        { 
+            "question"  : "Estas metiendo el tenedor en tu bolsillo",                         
+            "answer"    : "You're putting the fork into your pocket"
+        },
+        { 
+            "question"  : "Dime que saque otra cosa de la bolsa",                         
+            "answer"    : "Tell me to take something else out of the bag"
+        },
+        { 
+            "question"  : "Saca otra cosa del bolso",                         
+            "answer"    : "Take something else out of the bag"
+        }
+
+    ],
+
+     "yyy" : [
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        },
+        { 
+            "question"  : "xxx",                         
+            "answer"    : "xxx"
+        }
+    ]    
+
 
 }
