@@ -35,7 +35,8 @@ $.getJSON('js/data.json', function(data, status) {
     preguntasJSON = data;
 
     // Seteo del tema por default
-    preguntas = preguntasJSON.preguntas_anything; 
+    // preguntas = preguntasJSON.preguntas_anything; 
+    preguntas = preguntasJSON.translation_list_41_imperativos; 
 
     resetearPreguntas();
 })
@@ -115,6 +116,10 @@ cbmTopicId.addEventListener('change', function(){
             preguntas = preguntasJSON.class_119_to_take_out_and_to_put_into;
             break;
 
+        case 'translation_list_41_imperativos':
+            preguntas = preguntasJSON.translation_list_41_imperativos;
+            break;
+
     }    
 
     disponibles=[];
@@ -157,9 +162,13 @@ function resetearPreguntasDisponibles(){
 
 
 
-// Genera preguntas 
+// Genera preguntas a partir de las que quedan disponibles
+// (las que aun no se han elejigo) 
 
-function generarPreguntas(){    
+function generarPreguntas(){ 
+
+    // Si existen mas preguntas disponibles
+
     if(disponibles.length>0){
         let item = generarAleatorio();
         let itemPreguntas = disponibles[item];
@@ -169,10 +178,10 @@ function generarPreguntas(){
         resultado.style.color = "black";  
 
         // Prepara la respuesta para que el usuario la muestre/oculte
-        answer.innerHTML = btnDismissHTML + "<h2>" + preguntas[itemPreguntas]["answer"] + "</h2>";
+        answer.innerHTML = btnDismissHTML + preguntas[itemPreguntas]["answer"] ;
 
         // Mantiene/Anula la configuracion de usuario mostrar/ocultar respuesta
-        answer.style.display = "none";
+        answer.style.display = "block";
 
         // contador
         count += 1;
@@ -188,6 +197,7 @@ function generarPreguntas(){
     } else{
         console.warn("No existen más preguntas");
         notification.style.display = "block";
+        resetearPreguntas();
     }
 }
 
@@ -204,5 +214,5 @@ function resetearPreguntas(){
     percent.style.width = "0%";
     percent.innerHTML = "0%";
     answer.innerHTML =  btnDismissHTML + "<h4>No hay datos para mostrar</h4>";
-    answer.style.color = "grey";
+    answer.style.color = "#B7B9BF";
 }

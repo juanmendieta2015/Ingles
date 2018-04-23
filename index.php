@@ -40,31 +40,13 @@
                     <option value="translation_list_38">Translation List # 38</option>
                     <option value="class_120_to_take_off_and_to_put_on">Class # 120: To take off / To put on</option>
                     <option value="class_119_to_take_out_and_to_put_into">Class # 119: To take out (of) / To put into</option>
+                    <option value="translation_list_41_imperativos">Translation List # 41 - Imperativos</option>
                 </select>            
             </div>
 
         </div>
 
-<!--         <div class="row topic">
 
-            <div class="col-sm-2 col-sm-offset-2" >
-               <label>Tema:</label>
-            </div>
-
-            <div class="col-sm-6">
-                <select id="topic_id" class="form-control topic_dropdown">
-                    <option value="anything">Anything</option>
-                    <option value="presente_continuo">Presente Continuo</option>
-                    <option value="class_121_verbos_terminan_ch">Class # 121: Verbos terminados en "ch"</option>
-                    <option value="translation_list_38">Translation List # 38</option>
-                    <option value="class_120_to_take_off_and_to_put_on">Class # 120: To take off / To put on</option>
-                    <option value="class_119_to_take_out_and_to_put_into">Class # 119: To take out (of) / To put into</option>
-                </select>            
-            </div>
-
-        </div>
-
- -->
 
         <!-- Progress bar -->
 
@@ -82,15 +64,6 @@
         <div class="row">
             <div class="col-xs-12 resultado" id="resultado">        
                 <h1>Haga clic en "Generar"</h1>
-            </div>
-        </div>
-
-
-
-        <!-- Answer -->
-        
-       <div class="row">
-            <div class="col-xs-12 alert alert-info alert-dismissible" role="alert" id="answer">                   
             </div>
         </div>
 
@@ -131,7 +104,16 @@
                 </ul>
 
             </div>
-        </div>                
+        </div>   
+
+
+        <!-- Answer -->
+        
+       <div class="row">
+            <div class="col-xs-12 alert alert-info alert-dismissible " role="alert" id="answer">                   
+            </div>
+        </div>
+                     
 
     </div>  
 

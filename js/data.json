@@ -537,6 +537,57 @@
 
     ],
 
+     "translation_list_41_imperativos" : [
+        { 
+            "question"  : "Dame el libro",                         
+            "answer"    : "Give me the book"
+        },
+        { 
+            "question"  : "Dámelo",                         
+            "answer"    : "Give it to me"
+        },
+        { 
+            "question"  : "Dáselo a él",                         
+            "answer"    : "Give it to him"
+        },
+        { 
+            "question"  : "Dáselo a ella",                         
+            "answer"    : "Give it to her"
+        },
+        { 
+            "question"  : "No se lo des a ellos",                         
+            "answer"    : "Don't give it to them"
+        },
+        { 
+            "question"  : "Dánoslo",                         
+            "answer"    : "Give it to us"
+        },
+        { 
+            "question"  : "Dámelos",                         
+            "answer"    : "Give them to me"
+        },
+        { 
+            "question"  : "Muéstraselos a ella",                         
+            "answer"    : "Show them to her"
+        },
+        { 
+            "question"  : "No trabajes tanto",                         
+            "answer"    : "Don't work so much"
+        },
+        { 
+            "question"  : "No corras en la escalera",                         
+            "answer"    : "Don't run on the stairs"
+        },
+        { 
+            "question"  : "No andes tan de prisa",                         
+            "answer"    : "Don't walk so fast"
+        },
+        { 
+            "question"  : "Descansa bajo este árbol",                         
+            "answer"    : "Rest under this tree"
+        }
+    ],  
+
      "yyy" : [
         { 
             "question"  : "xxx",                         
@@ -597,8 +648,7 @@
         { 
             "question"  : "xxx",                         
             "answer"    : "xxx"
-        }
+        }  
     ]    
-
 
 }
