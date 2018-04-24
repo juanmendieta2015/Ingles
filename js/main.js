@@ -120,6 +120,10 @@ cbmTopicId.addEventListener('change', function(){
             preguntas = preguntasJSON.translation_list_41_imperativos;
             break;
 
+        case 'translation_list_42':
+            preguntas = preguntasJSON.translation_list_42;
+            break;
+
     }    
 
     disponibles=[];

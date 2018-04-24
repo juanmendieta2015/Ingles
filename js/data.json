@@ -588,67 +588,57 @@
         }
     ],  
 
-     "yyy" : [
+    "translation_list_42" : [
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "No pongas el cuchillo en el plato",                         
+            "answer"    : "Don't put the knife on the plate"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "Léelo con mucho cuidado",                         
+            "answer"    : "Read it very carefully"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "Pruébalo",                         
+            "answer"    : "Try it"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "Intenta hacerlo",                         
+            "answer"    : "Try to do it"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "No les mires",                         
+            "answer"    : "Don't look at them"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "No los busques",                         
+            "answer"    : "Don't look for them"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "No los escuches",                         
+            "answer"    : "Don't listen to them"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "No fumes tanto",                         
+            "answer"    : "Don't smoke so much"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "Firmalo",                         
+            "answer"    : "Sign it"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "Hazme una pregunta",                         
+            "answer"    : "Ask me a question"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
+            "question"  : "Háblame de tus ideas",                         
+            "answer"    : "Talk to me about your ideas"
         },
         { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
-        },
-        { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
-        },
-        { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
-        },
-        { 
-            "question"  : "xxx",                         
-            "answer"    : "xxx"
-        }  
-    ]    
+            "question"  : "Llévame contigo",                         
+            "answer"    : "Take me with you"
+        }
+
+    ]  
+
 
 }

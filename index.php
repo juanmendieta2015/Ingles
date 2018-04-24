@@ -41,6 +41,7 @@
                     <option value="class_120_to_take_off_and_to_put_on">Class # 120: To take off / To put on</option>
                     <option value="class_119_to_take_out_and_to_put_into">Class # 119: To take out (of) / To put into</option>
                     <option value="translation_list_41_imperativos">Translation List # 41 - Imperativos</option>
+                    <option value="translation_list_42">Translation List # 42</option>
                 </select>            
             </div>
 
