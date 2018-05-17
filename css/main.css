@@ -14,12 +14,16 @@
 } 
 
 .resultado {
-    font-size: 50px;
+    font-size: 2.2em;
     color: gray;
     background-color: #f5ffb3;
     padding: 30px;
     border-radius: 5px;
     border:1px solid #ccc;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttoms {
@@ -28,12 +32,17 @@
 }
 
 #answer{
-    font-size: 24px; 
+    font-size: 1.7em; 
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 }
 
 
 #help{
     text-align: left;
+    color: grey;
 }
 
 .topic{
@@ -65,4 +74,37 @@
 .auxiliar{
     background-color: #fc0;
     border:1px solid #333;
+}
+
+/*Cargador de boton enviar*/
+
+.loader {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+a:hover {
+    text-decoration: none;   
+    color:blue;
+    cursor: pointer;
+}
+
+
+/*Publicidad*/
+.ads {
+    background-color: #bbbbbb;
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 5em;
+    margin-top: 1em;
 }

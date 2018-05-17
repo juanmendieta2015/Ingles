@@ -10,6 +10,16 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="css/main.css" rel="stylesheet" type="text/css">
+
+    <!-- Publicidad -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8187489503971577",
+        enable_page_level_ads: true
+      });
+    </script>
+
 </head>
 <body id="body">
 
@@ -19,7 +29,7 @@
 
         <div class="row">
             <div class="col-xs-12" id="header">
-                <h1>Prácticas de Inglés: Traducciones Inversas</h1>
+                <h3>Inglés Traducciones Inversas</h3>
             </div>
         </div>
 
@@ -59,7 +69,6 @@
 
 
 
-
         <!-- Pregunta -->
         
         <div class="row">
@@ -69,14 +78,22 @@
         </div>
 
 
+       <!-- Answer -->
+        
+       <div class="row">
+            <div class="col-xs-12 alert alert-info alert-dismissible " role="alert" id="answer">                   
+            </div>
+        </div>
+
 
         <!-- Botones -->
 
-       <div class="row">
-            <div class="col-xs-12" id="footer" >        
+       <div class="row" id="footer">
+            <!-- <div class="col-xs-12 col-md-10 col-md-offset-1" >         -->
                 <button id="generarPregunta" class="btn btn-success buttoms">Generar</button>
+                <button id="btnShowHideAnswer" class="btn buttoms">Mostrar</button>
                 <button id="resetear" class="btn buttoms">Resetear</button>
-            </div>
+            <!-- </div> -->
         </div>
 
 
@@ -89,13 +106,13 @@
                     <p>Se han terminado las preguntas</p>        
             </div>
         </div>
-
+               
 
 
         <!-- Tips -->
 
        <div class="row">
-            <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"  id="help">  
+            <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 visible-lg hidden-sm"  id="help">  
 
                 <h5>Tips:</h5>
                 <ul>
@@ -108,17 +125,110 @@
         </div>   
 
 
-        <!-- Answer -->
-        
-       <div class="row">
-            <div class="col-xs-12 alert alert-info alert-dismissible " role="alert" id="answer">                   
-            </div>
-        </div>
-                     
+        <div class="row">
 
+
+                <!-- Formulario de Contacto -->
+
+                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <br>
+                            <a id="showHideContact" class="btn btn-info btn-xs">Sugerencias</a>
+                            <br>
+                            <br>
+
+                            <form id="form_contact" method="post" class="text-left">        
+
+                                <legend>Sugerencias y Comentarios</legend>
+
+                                <!-- Informacion al usuario -->
+                                <div class="alert alert-info" role="alert">
+                                  <div class="alert-info"> 
+                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                    Puedes contactarme en juanmsn@live.com
+                                  </div>
+                                </div>                                  
+
+                                <!-- Nombre -->
+                                <div class="form-group">
+                                    <label class="sr-only">Name:</label>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Sus Nombres" required>
+                                </div>      
+
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label class="sr-only">E-mail: </label>
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Su E-mail" required>
+                                </div>      
+ 
+
+                                <!-- Mensaje -->
+                                <div class="form-group">
+                                    <label class="sr-only">Message: </label>
+                                    <textarea name="message" id="message" class="form-control" placeholder="Su Mensaje" cols="40" rows="7" required></textarea> 
+                                </div>
+
+
+                                <!-- Mensaje de confirmacion     -->
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div id="resultadoSendMessage"></div> 
+                                    </div>      
+                                </div>                              
+
+
+                                <!-- Boton "Enviar Mensaje" -->
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button id="btnSendMessage" class="btn btn-success"> <i class="far fa-paper-plane"></i> Enviar Mensaje</button>       
+                                    </div>      
+                                    <div class="col-xs-6">
+                                        <div id="loader"></div>     
+                                    </div>  
+                                </div>   
+
+                            </form>     
+                        </div>  <!-- /.col-xs-12 -->
+                    </div>  <!-- /.row -->
+        
+                </div>
+
+            </div>  <!-- ./row -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="ads"></div>
+                </div>
+            </div>
+
+   
     </div>  
 
     <script src="js/main.js"></script>
 
 </body>
 </html>
+<?php
+    date_default_timezone_set('America/Guayaquil');
+    include_once("services/Conexion.php");
+    include_once("services/config.inc.php");
+
+    $conn = new Conexion(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
+    $link = $conn->connect();
+
+    $date       = date("Y-m-d H:i:s");
+    $ip_address = $_SERVER['REMOTE_ADDR'];
+    $browser    = $_SERVER['HTTP_USER_AGENT'];
+
+    $sql = "INSERT INTO log_home (fecha, ip_address, browser)
+    VALUES ('{$date}',  '{$ip_address}', '{$browser}')";
+
+    if ($link->query($sql) === TRUE) {
+        // echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $link->error;
+    }
+
+    $link->close();
+?>

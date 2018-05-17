@@ -1,13 +1,22 @@
-const resultado = document.getElementById("resultado");
-const contador = document.getElementById("contador");
-const resetear = document.getElementById("resetear");
-const btnGenerarPregunta = document.getElementById("generarPregunta");
-const notification = document.getElementById("notification");
-const body = document.getElementById("body");
-const answer = document.getElementById("answer");
-const percent = document.getElementById("percent");
-const topic_title = document.getElementById("topic_title");
-const cbmTopicId = document.getElementById("topic_id");
+const resultado             = document.getElementById("resultado");
+const contador              = document.getElementById("contador");
+const resetear              = document.getElementById("resetear");
+const btnShowHideAnswer     = document.getElementById("btnShowHideAnswer");
+const btnGenerarPregunta    = document.getElementById("generarPregunta");
+const notification          = document.getElementById("notification");
+const body                  = document.getElementById("body");
+const answer                = document.getElementById("answer");
+const percent               = document.getElementById("percent");
+const topic_title           = document.getElementById("topic_title");
+const cbmTopicId            = document.getElementById("topic_id");
+const frmContact            = document.getElementById("form_contact");
+
+//Mensajes
+const ERROR_EMAIL           = "Por favor verifique su E-mail, esta incorrecto.";
+const ERROR_MESSAGE         = "Ha ocurrido un error, su mensaje no se ha enviado. Por favor intente de nuevo.";
+const SUCCESS_MESSAGE       = "¡Gracias por escribirme!. Analizaremos tu petición. :)";
+const ERROR_VALIDATION      = "Ha ocurrido un error de validacion, por favor verifique sus datos.";
+const ERROR_SERVIDOR        = "No se ha podido establecer conexión con el servidor.";
 
 var count = 0;
 var new_percent = 0;
@@ -16,7 +25,10 @@ var btnDismissHTML =    '<button type="button" class="close" data-dismiss="alert
                         '</button>';
 
 // Oculta la respuesta
-answer.style.display = "none";   
+answer.style.display = "none";  
+
+// Oculta el formuario de contacto
+frmContact.style.display = "none"; 
 
 
 
@@ -58,26 +70,27 @@ btnGenerarPregunta.addEventListener('click', function(){
 })
 
 
+// Boton Mostrar/Ocultar Respuesta
+
+btnShowHideAnswer.addEventListener('click', function(){
+    showHideAnswer();
+})
+
+
 
 // Captura eventos keydown
 
 body.addEventListener('keydown', function(){
     var x = event.keyCode;
-    if (x == 97) {  // 97 is the 1 key
-
-        if (answer.style.display === "none") {
-            answer.style.display = "block";
-        } else{
-            answer.style.display = "none";
-        }
-
+    if (x == 97 || x == 49) {  // 97 is the 1 key
+        showHideAnswer();
     }    
 
     if (x == 13) {  // 13 is the intro key
         generarPreguntas();
     }     
 
-    if (x == 96) {  // 96 is the 0 key
+    if (x == 96 || x == 48) {  // 96 is the 0 key
         resetearPreguntas();
     }  
     
@@ -182,10 +195,10 @@ function generarPreguntas(){
         resultado.style.color = "black";  
 
         // Prepara la respuesta para que el usuario la muestre/oculte
-        answer.innerHTML = btnDismissHTML + preguntas[itemPreguntas]["answer"] ;
+        answer.innerHTML = /*btnDismissHTML +*/ preguntas[itemPreguntas]["answer"] ;
 
         // Mantiene/Anula la configuracion de usuario mostrar/ocultar respuesta
-        answer.style.display = "block";
+        // answer.style.display = "block";
 
         // contador
         count += 1;
@@ -203,6 +216,20 @@ function generarPreguntas(){
         notification.style.display = "block";
         resetearPreguntas();
     }
+
+
+    $.ajax({
+        async:true,
+        type: "POST",
+        dataType: "html",
+        contentType: "application/x-www-form-urlencoded",
+        url:"services/log_generar.php"
+    });
+
+    return false;
+
+
+
 }
 
 
@@ -217,6 +244,158 @@ function resetearPreguntas(){
     resetearPreguntasDisponibles();
     percent.style.width = "0%";
     percent.innerHTML = "0%";
-    answer.innerHTML =  btnDismissHTML + "<h4>No hay datos para mostrar</h4>";
-    answer.style.color = "#B7B9BF";
+    answer.innerHTML =  /*btnDismissHTML +*/ "<h4>No hay datos para mostrar</h4>";
+    answer.style.color = "#738E9B";
+}
+
+// Muestra/Oculta la respuesta
+function showHideAnswer(){
+    if (answer.style.display === "none") {
+        answer.style.display = "block";
+    } else{
+        answer.style.display = "none";
+    }
+}
+
+var x;
+x = $(document);
+x.ready(inicializar);  
+
+function inicializar(){
+    let btnSendMessage = $("#btnSendMessage");
+    btnSendMessage.click(sendMessage);
+
+    $("#showHideContact").click(function(){
+        $("#form_contact").toggle('fast');
+    });
+}
+
+function sendMessage(){
+
+    var name            = $("#name").val();
+    var email           = $("#email").val();
+    var message         = $("#message").val();
+
+
+    if ( validateEmail(email) == false ) {
+
+        let response = '<div class="alert alert-danger alert-dismissible" role="alert">' + 
+                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                                '<span aria-hidden="true">&times;</span>' + 
+                            '</button>' +
+                            '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> ' +
+                            '<strong>Error! </strong>' + ERROR_EMAIL +
+                        '</div>';
+        $("#resultadoSendMessage").html(response);         
+        return false;
+    }
+
+    $.ajax({
+        async:true,
+        type: "POST",
+        dataType: "html",
+        contentType: "application/x-www-form-urlencoded",
+        url:"services/send_email.php",
+        data:
+            "name=" + name + 
+            "&email=" + email + 
+            "&message=" + message,
+        beforeSend:inicioEnvio,
+        success: llegada,
+        error: problemas
+    });
+
+
+    // Limpia todos los campos de formulario
+    document.getElementById("form_contact").reset();
+
+    return false;
+
+}
+
+// Preloader
+
+function inicioEnvio()
+{
+    $("#loader").addClass("loader"); 
+}      
+
+
+
+// Muestra confirmacion/error al usuario      
+
+function llegada(datos)
+{
+
+    switch(datos) {
+        
+        // 0: Error de envio de tipo interno, falla con SENGRID, servidor, etc.
+
+        case '0':
+            var response = '<div class="alert alert-danger alert-dismissible" role="alert">' +
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                                    '<span aria-hidden="true">&times;</span>' +
+                                '</button>' +
+                                '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> ' +
+                                '<strong>Error! </strong>' + ERROR_MESSAGE +
+                            '</div>';
+
+            $("#resultadoSendMessage").html(response); 
+            break;
+
+
+        // 1: Envio satisfactorio
+
+        case '1':
+            var response = '<div class="alert alert-success alert-dismissible" role="alert">' +
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                                    '<span aria-hidden="true">&times;</span>' +
+                                '</button>' +
+                                '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> ' +
+                                SUCCESS_MESSAGE +
+                            '</div>';
+
+            $("#resultadoSendMessage").html(response);
+            break;    
+
+
+        // 2: Error de validacion, datos invalidos proporcionado por el usuario
+        
+        case '2':
+            var response = '<div class="alert alert-danger alert-dismissible" role="alert">' +
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                                    '<span aria-hidden="true">&times;</span>' +
+                                '</button>' +
+                                '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> ' +
+                                '<strong>Error! </strong>' + ERROR_VALIDATION +
+                            '</div>';
+
+            $("#resultadoSendMessage").html(response);
+            break;
+
+    }
+
+    $("#loader").removeClass("loader");    
+
+}
+
+// Problemas estableciendo conexion con el servidor                   
+
+function problemas()
+{
+    var response_success = '<div class="alert alert-danger alert-dismissible" role="alert"> ' +
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                                    '<span aria-hidden="true">&times;</span>' +
+                                '</button>' +
+                                '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> ' +
+                                '<strong>Error! </strong>' + ERROR_SERVIDOR +
+                            '</div>';
+    $("#resultadoSendMessage").html(response_success)  
+}            
+
+
+function validateEmail(email) 
+{
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
