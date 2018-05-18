@@ -1,6 +1,6 @@
 const resultado             = document.getElementById("resultado");
 const contador              = document.getElementById("contador");
-const resetear              = document.getElementById("resetear");
+// const resetear              = document.getElementById("resetear");
 const btnShowHideAnswer     = document.getElementById("btnShowHideAnswer");
 const btnGenerarPregunta    = document.getElementById("generarPregunta");
 const notification          = document.getElementById("notification");
@@ -31,11 +31,9 @@ answer.style.display = "none";
 frmContact.style.display = "none"; 
 
 
-
 // Almacena los indices de las preguntas que van quedando disponibles
 // para su seleccion aleatoria
 disponibles=[];
-
 
 
 // Carga Banco de preguntas desde Archivo JSON
@@ -57,9 +55,9 @@ $.getJSON('js/data.json', function(data, status) {
 
 // Boton Resetear 
 
-resetear.addEventListener('click', function(){
-    resetearPreguntas();
-})
+// resetear.addEventListener('click', function(){
+//     resetearPreguntas();
+// })
 
 
 
@@ -228,8 +226,6 @@ function generarPreguntas(){
 
     return false;
 
-
-
 }
 
 
@@ -252,9 +248,12 @@ function resetearPreguntas(){
 function showHideAnswer(){
     if (answer.style.display === "none") {
         answer.style.display = "block";
+        btnShowHideAnswer.innerHTML = "Ocultar Respuesta";
     } else{
         answer.style.display = "none";
+        btnShowHideAnswer.innerHTML = "Mostrar Respuesta";
     }
+
 }
 
 var x;
@@ -268,7 +267,35 @@ function inicializar(){
     $("#showHideContact").click(function(){
         $("#form_contact").toggle('fast');
     });
+
+    var topicId = getURLParameter('topic_id');
+    console.log(topicId);
+
+    // $("#topic_id option[value='translation_list_38']").prop('selected', true);
+    $("#topic_id option[value=" + topicId + "]").prop('selected', true);
+
+
+
 }
+
+
+function getURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+
+
+
 
 function sendMessage(){
 

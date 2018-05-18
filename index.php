@@ -1,3 +1,30 @@
+<?php
+    date_default_timezone_set('America/Guayaquil');
+    include_once("services/Conexion.php");
+    include_once("services/config.inc.php");
+
+    $conn = new Conexion(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
+    $link = $conn->connect();
+
+    $date       = date("Y-m-d H:i:s");
+    $ip_address = $_SERVER['REMOTE_ADDR'];
+    $browser    = $_SERVER['HTTP_USER_AGENT'];
+
+    $sql = "INSERT INTO log_home (fecha, ip_address, browser)
+    VALUES ('{$date}',  '{$ip_address}', '{$browser}')";
+
+    if ($link->query($sql) === TRUE) {
+        // echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $link->error;
+    }
+
+    $link->close();
+
+    $topic_id = $_GET['topic_id'] ;
+    // echo $topic_id;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,18 +72,17 @@
             <div class="col-xs-12 col-sm-9 col-md-6 ">
                 <select id="topic_id" class="form-control topic_dropdown">
                     <option value="anything">Anything</option>
-                    <option value="presente_continuo">Presente Continuo</option>
+                    <option value="presente_continuo" selected="selected">Presente Continuo</option>
+                    <option value="class_119_to_take_out_and_to_put_into">Class # 119: To take out (of) / To put into</option>
+                    <option value="class_120_to_take_off_and_to_put_on">Class # 120: To take off / To put on</option>
                     <option value="class_121_verbos_terminan_ch">Class # 121: Verbos terminados en "ch"</option>
                     <option value="translation_list_38">Translation List # 38</option>
-                    <option value="class_120_to_take_off_and_to_put_on">Class # 120: To take off / To put on</option>
-                    <option value="class_119_to_take_out_and_to_put_into">Class # 119: To take out (of) / To put into</option>
                     <option value="translation_list_41_imperativos">Translation List # 41 - Imperativos</option>
                     <option value="translation_list_42">Translation List # 42</option>
                 </select>            
             </div>
 
         </div>
-
 
 
         <!-- Progress bar -->
@@ -91,8 +117,10 @@
        <div class="row" id="footer">
             <!-- <div class="col-xs-12 col-md-10 col-md-offset-1" >         -->
                 <button id="generarPregunta" class="btn btn-success buttoms">Generar</button>
-                <button id="btnShowHideAnswer" class="btn buttoms">Mostrar</button>
-                <button id="resetear" class="btn buttoms">Resetear</button>
+                <button id="btnShowHideAnswer" class="btn buttoms">Mostrar Respuesta</button>
+
+                <!-- Posiblemente eiminarlo -->
+                <!-- <button id="resetear" class="btn buttoms">Resetear</button> -->
             <!-- </div> -->
         </div>
 
@@ -198,7 +226,7 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="ads"></div>
+                    <div class="ads">publicidad</div>
                 </div>
             </div>
 
@@ -209,26 +237,3 @@
 
 </body>
 </html>
-<?php
-    date_default_timezone_set('America/Guayaquil');
-    include_once("services/Conexion.php");
-    include_once("services/config.inc.php");
-
-    $conn = new Conexion(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
-    $link = $conn->connect();
-
-    $date       = date("Y-m-d H:i:s");
-    $ip_address = $_SERVER['REMOTE_ADDR'];
-    $browser    = $_SERVER['HTTP_USER_AGENT'];
-
-    $sql = "INSERT INTO log_home (fecha, ip_address, browser)
-    VALUES ('{$date}',  '{$ip_address}', '{$browser}')";
-
-    if ($link->query($sql) === TRUE) {
-        // echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $link->error;
-    }
-
-    $link->close();
-?>
