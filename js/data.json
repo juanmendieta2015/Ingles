@@ -1,6 +1,6 @@
 {
 
-    "preguntas_anything" : [
+    "anything" : [
         {
             "question"  : "¿Quieres algo?",                             
             "answer"    : "Do you want anything?"                          

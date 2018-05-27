@@ -36,20 +36,8 @@ frmContact.style.display = "none";
 disponibles=[];
 
 
-// Carga Banco de preguntas desde Archivo JSON
-
-var preguntasJSON = {};
-var preguntas = {};
-
-$.getJSON('js/data.json', function(data, status) { 
-    preguntasJSON = data;
-
-    // Seteo del tema por default
-    // preguntas = preguntasJSON.preguntas_anything; 
-    preguntas = preguntasJSON.translation_list_41_imperativos; 
-
-    resetearPreguntas();
-})
+let topicId;
+let defaultTopic = 'anything';
 
 
 
@@ -75,7 +63,6 @@ btnShowHideAnswer.addEventListener('click', function(){
 })
 
 
-
 // Captura eventos keydown
 
 body.addEventListener('keydown', function(){
@@ -95,53 +82,15 @@ body.addEventListener('keydown', function(){
 })
 
 
-
 // Dropdown de temas
 
-cbmTopicId.addEventListener('change', function(){
+cbmTopicId.addEventListener('change', onChange)
 
-    switch (cbmTopicId.value) {
-
-        case 'anything':
-            // preguntas = preguntas_anything;
-            preguntas = preguntasJSON.preguntas_anything;
-            break;
-
-        case 'presente_continuo':
-            preguntas = preguntasJSON.presente_continuo;
-            break;
-
-        case 'class_121_verbos_terminan_ch':
-            preguntas = preguntasJSON.class_121_verbos_terminan_ch;
-            break;
-
-        case 'translation_list_38':
-            preguntas = preguntasJSON.translation_list_38;
-            break;
-
-        case 'class_120_to_take_off_and_to_put_on':
-            preguntas = preguntasJSON.class_120_to_take_off_and_to_put_on;
-            break;
-
-        case 'class_119_to_take_out_and_to_put_into':
-            preguntas = preguntasJSON.class_119_to_take_out_and_to_put_into;
-            break;
-
-        case 'translation_list_41_imperativos':
-            preguntas = preguntasJSON.translation_list_41_imperativos;
-            break;
-
-        case 'translation_list_42':
-            preguntas = preguntasJSON.translation_list_42;
-            break;
-
-    }    
-
+function onChange(){
+    preguntas = preguntasJSON[cbmTopicId.value];
     disponibles=[];
     resetearPreguntas();    
-
-})
-
+}
 
 
 // Seleccion aleatoria de un elemento en disponibles[]
@@ -256,11 +205,30 @@ function showHideAnswer(){
 
 }
 
+
+
 var x;
 x = $(document);
 x.ready(inicializar);  
 
-function inicializar(){
+
+// Carga Banco de preguntas desde Archivo JSON
+
+var preguntasJSON = {};
+var preguntas = {};
+
+
+function setDefaultTopic(data)
+{
+    preguntasJSON = data;
+    // Seteo del tema por default
+    preguntas = preguntasJSON[topicId]; 
+    resetearPreguntas();
+}
+
+
+function inicializar()
+{
     let btnSendMessage = $("#btnSendMessage");
     btnSendMessage.click(sendMessage);
 
@@ -268,12 +236,14 @@ function inicializar(){
         $("#form_contact").toggle('fast');
     });
 
-    var topicId = getURLParameter('topic_id');
-    console.log(topicId);
+    topicId = ( getURLParameter('topic_id') ? getURLParameter('topic_id') : defaultTopic);
+
 
     // $("#topic_id option[value='translation_list_38']").prop('selected', true);
     $("#topic_id option[value=" + topicId + "]").prop('selected', true);
 
+
+    $.getJSON('js/data.json', setDefaultTopic)
 
 
 }
@@ -292,9 +262,6 @@ function getURLParameter(sParam)
         }
     }
 }
-
-
-
 
 
 function sendMessage(){

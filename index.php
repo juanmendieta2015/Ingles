@@ -3,30 +3,31 @@
     include_once("services/Conexion.php");
     include_once("services/config.inc.php");
 
-    $conn = new Conexion(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
-    $link = $conn->connect();
+    saveLogHome();
 
-    $date       = date("Y-m-d H:i:s");
-    $ip_address = $_SERVER['REMOTE_ADDR'];
-    $browser    = $_SERVER['HTTP_USER_AGENT'];
+    function saveLogHome()
+    {
+        $conn = new Conexion(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
+        $link = $conn->connect();
+        $date       = date("Y-m-d H:i:s");
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $browser    = $_SERVER['HTTP_USER_AGENT'];
 
-    $sql = "INSERT INTO log_home (fecha, ip_address, browser)
-    VALUES ('{$date}',  '{$ip_address}', '{$browser}')";
-
-    if ($link->query($sql) === TRUE) {
-        // echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $link->error;
+        $sql = "INSERT INTO log_home (fecha, ip_address, browser)
+        VALUES ('{$date}',  '{$ip_address}', '{$browser}')";
+        
+        if ($link->query($sql) === TRUE) {
+            // echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $link->error;
+        }
+        $link->close();        
     }
 
-    $link->close();
-
-    $topic_id = $_GET['topic_id'] ;
-    // echo $topic_id;
-
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,6 +40,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
 
     <!-- Publicidad -->
+<!--     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -46,7 +48,7 @@
         enable_page_level_ads: true
       });
     </script>
-
+ -->
 </head>
 <body id="body">
 
@@ -116,7 +118,7 @@
 
        <div class="row" id="footer">
             <!-- <div class="col-xs-12 col-md-10 col-md-offset-1" >         -->
-                <button id="generarPregunta" class="btn btn-success buttoms">Generar</button>
+                <button id="generarPregunta" class="btn btn-success buttoms">Generar Pregunta</button>
                 <button id="btnShowHideAnswer" class="btn buttoms">Mostrar Respuesta</button>
 
                 <!-- Posiblemente eiminarlo -->
